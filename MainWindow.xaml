@@ -1,0 +1,146 @@
+﻿<Window x:Name="frmMain" x:Class="Proiect.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proiect"
+        mc:Ignorable="d" Height="865" Width="1003" ResizeMode="NoResize" Cursor="Hand" Title="Fabrică virtuală" Loaded="frmMain_Loaded_1">
+    <Window.Background>
+        <ImageBrush ImageSource="/YzVlYzA0ZWQzMTUxYzE2ZDJhZmI3YzM1MQ==.thumb.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
+    <Grid MenuItem.Click="FilledItemsShow_Click">
+        <Label x:Name="lblTitle" Content="Crama Dinastia - Vânzări" HorizontalAlignment="Left" Margin="204,48,0,0" VerticalAlignment="Top" Height="61" Width="368" Background="{x:Null}" FontWeight="Bold" FontSize="30" FontStyle="Italic"/>
+        <GroupBox x:Name="gbTip" Header="Tipuri de vin" Margin="25,147,501,327" FontWeight="Bold" FontSize="15">
+            <Canvas Height="345" Margin="0,0,-2,0" RenderTransformOrigin="0.092,0.904">
+                <Label x:Name="lblSec1" Content="Roșu-Sec" Canvas.Left="67" Canvas.Top="22" RenderTransformOrigin="1.146,-0.186" Width="110" Height="34"/>
+                <Label x:Name="lblDemisec1" Content="Roșu-Demisec" Canvas.Left="67" Canvas.Top="61" Width="127"/>
+                <Label x:Name="lblDemidulce1" Content="Roșu-Demidulce" Canvas.Left="67" Canvas.Top="96" RenderTransformOrigin="0.505,0.742" Width="127"/>
+                <Label x:Name="lblDemidulce2" Content="Alb-Demidulce" Canvas.Left="67" Canvas.Top="229" Width="140"/>
+                <Label x:Name="lblDemisec2" Content="Alb-Demisec" Canvas.Left="67" Canvas.Top="194" Width="124"/>
+                <Label x:Name="lblSec2" Content="Alb-Sec" Canvas.Left="67" Canvas.Top="164" Height="30" Width="97"/>
+                <Label x:Name="lblDemidulce3" Content="Rose-Demidulce" Canvas.Left="64" Canvas.Top="284" RenderTransformOrigin="0.5,0.5" Width="132" Height="32">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.648"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <TextBox x:Name="txtSec1" Canvas.Left="246" Canvas.Top="26" Text="30" TextWrapping="Wrap" Width="120" IsReadOnly="True"/>
+                <TextBox x:Name="txtDemisec1" Canvas.Left="246" Canvas.Top="63" Text="45" TextWrapping="Wrap" Width="120" IsReadOnly="True"/>
+                <TextBox x:Name="txtDemidulce1" Canvas.Left="246" Canvas.Top="100" Text="60" TextWrapping="Wrap" Width="120" IsReadOnly="True" UndoLimit="60"/>
+                <TextBox x:Name="txtSec2" Canvas.Left="246" Canvas.Top="164" Text="35" TextWrapping="Wrap" Width="120" IsReadOnly="True"/>
+                <TextBox x:Name="txtDemisec2" Canvas.Left="246" Canvas.Top="198" Text="40" TextWrapping="Wrap" Width="120" IsReadOnly="True"/>
+                <TextBox x:Name="txtDemidulce2" Canvas.Left="246" Canvas.Top="233" Text="55" TextWrapping="Wrap" Width="120" IsReadOnly="True"/>
+                <TextBox x:Name="txtDemidulce3" Canvas.Left="246" Canvas.Top="288" Text="70" TextWrapping="Wrap" Width="120" IsReadOnly="True" Height="31"/>
+            </Canvas>
+        </GroupBox>
+        <GroupBox x:Name="gbVanzare" Header="Comandă" Margin="25,540,34,10" FontWeight="Bold" FontSize="15">
+            <Label HorizontalAlignment="Left" Margin="705,0,0,0" Height="40" Width="136"/>
+        </GroupBox>
+        <Canvas Margin="37,560,47,28">
+            <Label x:Name="lblCantitate" Content="Cantitate" Canvas.Left="10" Canvas.Top="10" Height="41" Width="85" FontWeight="Bold" FontSize="15" Opacity="0.995" Background="#FFE5C365"/>
+            <TextBox x:Name="txtCantitate" Canvas.Left="134" Canvas.Top="11" Text="0" TextWrapping="Wrap" Width="49" Height="40" Foreground="#FFE5C365">
+                <TextBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFE5C365" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.Background>
+            </TextBox>
+            <Label x:Name="lblTip" Content="Tip" Canvas.Left="273" Canvas.Top="14" RenderTransformOrigin="0.557,0.469" Height="37" Width="49" FontWeight="Bold" Background="#FFE5C365" FontSize="15"/>
+            <ComboBox x:Name="cmbTip" Canvas.Left="348" Canvas.Top="11" Width="206" Height="40" SelectionChanged="cmbTip_SelectionChanged">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF3F3F3"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FFE5C365" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
+            <Label x:Name="lblPreț" Content="Preț" Canvas.Left="638" Canvas.Top="18" Height="33" Width="50" Background="#FFE5C365" FontWeight="Bold" FontSize="15"/>
+            <TextBox x:Name="txtPreț" Canvas.Left="715" Canvas.Top="12" Text="0" TextWrapping="Wrap" Width="69" Height="40" IsReadOnly="True" Foreground="#FFE5C365">
+                <TextBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFE5C365" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.Background>
+            </TextBox>
+            <ListBox x:Name="lstComandă" Height="134" Width="616" Canvas.Top="67" Background="#FFE5C365"/>
+            <Label x:Name="lblTotal" Content="Total" Canvas.Left="471" Canvas.Top="216" Width="47" Height="26" Background="#FFE5C365" FontWeight="Bold" FontSize="15"/>
+            <TextBox x:Name="txtTotal" Canvas.Left="538" Canvas.Top="216" Text="0" TextWrapping="Wrap" Width="78" Height="26" IsReadOnly="True" Foreground="#FFE5C365">
+                <TextBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFE5C365" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.Background>
+            </TextBox>
+            <Button x:Name="btnAdaugă" Content="Adaugă" Canvas.Left="760" Canvas.Top="67" Height="35" Width="108" FontSize="15" Click="btnAdaugă_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF3F3F3"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FFE5C365" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnȘterge" Content="Șterge" Canvas.Left="760" Canvas.Top="126" Height="35" Width="108" FontSize="15" Click=" btnȘterge_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF3F3F3"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FFE5C365" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnTrimite" Content="Trimite" Canvas.Left="760" Canvas.Top="216" Height="28 
+                    " Width="108" FontWeight="Bold" FontSize="15" Click="btnTrimite_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF3F3F3"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FFE5C365" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Canvas>
+        <Menu x:Name="mnuMeniu" Margin="10,10,851,790" RenderTransformOrigin="0.5,0.5" Background="#FFE5C365">
+            <Menu.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="2.093"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.732"/>
+                </TransformGroup>
+            </Menu.RenderTransform>
+            <MenuItem Header="File" FontSize="15" Background="#FFE5C365">
+                <MenuItem x:Name="exitMenuItem" Header="Ieșire" Background="#FFE5C365" Click="exitMenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Categorii" FontSize="15" Background="#FFE5C365">
+                <MenuItem Header="Roșu" Background="#FFE5C365">
+                    <MenuItem x:Name="sec1MenuItem" Header="Sec" Background="#FFE5C365" Click="sec1MenuItem_Click"/>
+                    <MenuItem x:Name="demisec1MenuItem" Header="Demisec" Background="#FFE5C365" Click="demisec1MenuItem_Click"/>
+                    <MenuItem x:Name="demidulce1MenuItem" Header="Demidulce" Background="#FFE5C365" Click="demidulce1MenuItem_Click"/>
+                </MenuItem>
+                <MenuItem Header="Alb" Background="#FFE5C365">
+                    <MenuItem x:Name="sec2MenuItem" Header="Sec" Background="#FFE5C365" Click="sec2MenuItem_Click"/>
+                    <MenuItem x:Name="demisec2MenuItem" Header="Demisec" Background="#FFE5C365" Click="demisec2MenuItem_Click"/>
+                    <MenuItem x:Name="demidulce2MenuItem" Header="Demidulce" Background="#FFE5C365" Click="demidulce2MenuItem_Click"/>
+                </MenuItem>
+                <MenuItem Header="Rose" Background="#FFE5C365">
+                    <MenuItem Header="Sec" Background="#FFE5C365"/>
+                    <MenuItem Header="Demisec" Background="#FFE5C365"/>
+                    <MenuItem x:Name="demidulce3MenuItem" Header="Demidulce" Background="#FFE6C66D" Click="demidulce3MenuItem_Click"/>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>
